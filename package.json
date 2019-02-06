@@ -36,9 +36,11 @@
   "homepage": "https://github.com/zippiehq/personal_multisigs",
   "devDependencies": {
     "ganache-cli": "^6.2.3",
-    "openzeppelin-solidity": "2.0.0",
+    "openzeppelin-solidity": "latest",
     "truffle": "^5.0.0-beta.2",
     "truffle-flattener": "^1.2.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "solc": "^0.4.24"
+  }
 }
