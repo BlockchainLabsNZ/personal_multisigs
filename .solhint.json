@@ -1,0 +1,9 @@
+{                                              
+    "extends": "default",                      
+    "rules": {                                 
+    	"reentrancy": "true",
+    	"function-max-lines": ["warn", 45],
+    	"two-lines-top-level-separator": false,
+    	"visibility-modifier-order": "warn"
+    }                                          
+}                                              

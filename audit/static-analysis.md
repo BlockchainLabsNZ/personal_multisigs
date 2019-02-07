@@ -27,7 +27,7 @@ Report:
  - [ ] No typos in documentation/comments (see below)
  	- [ZippieWallet, lines: 32, 127, 162, 258, 300, 385, 509](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Zippie/ZippieWallet.sol)
  	- [ZippieMultisig, lines: 9, 11, 58](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Zippie/ZippieMultisig.sol)
- 	- [ZippieCardNonces, line 8](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Zippie/ZippieCardNonces.sol)
+ 	- [ZippieCardNonces, lines: 8, 16](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Zippie/ZippieCardNonces.sol)
  	- [ZippieCard, line 10](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Zippie/ZippieCard.sol)
 
 ### Logic
@@ -42,24 +42,24 @@ Report:
 ### Code correctness
 
  - [ ] Adherence to adopted standards such as ERC20
- - [ ] Latest version of pragma
- - [ ] Latest syntax (constructors, emit, ... )
- - [ ] Common and well tested libraries and frameworks are used (e.g. Open Zeppelin)  
+ - [x] Latest version of pragma
+ - [x] Latest syntax (constructors, emit, ... )
+ - [ ] Latest(ish) (of stable) version of 
+	 - [x] Solidity compiler
+	 - [ ] Frameworks – *[Open Zeppelin library v2.0.0](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v2.0.0) is used, which uses old-ish pragma version (0.4.24)*
+	 - [ ] Development/testing environment
+ - [x] Common and well tested libraries and frameworks are used (e.g. Open Zeppelin)  
  - [ ] Variable types declared explicitly (uint256 vs uint)
  - [ ] Access modifiers declared explicitly
  - [ ] Consistent naming convention (CamelCase/pascalCase, underscores, ...) 
  - [ ] No magic numbers (variables defined with any "obvious" numbers without explanation) – [example](https://github.com/BlockchainLabsNZ/bluzelle-contracts/issues/3)
  - [ ] Solidity variables are used (`1 year` vs `365*24*60*60`) – [list](https://solidity.readthedocs.io/en/v0.4.24/units-and-global-variables.html) - *no such variables*
- - [ ] Milestones defined by timestamps, not by blocks - *no milestones*
  - [ ] Functions explicitly returns boolean if it was declared
  - [ ] Tight struct packing
- - [ ] Fallbacks function logging events - *no fallback function*
+ - [ ] Fallbacks function logging events - *no fallback functions*
  - [ ] No variables re-declared
  - [ ] No reliance on nested callback functions or console logs (JS)
- - [ ] Latest(ish) (of stable) version of 
-	 - [ ] Solidity compiler
-	 - [ ] Frameworks
-	 - [ ] Development/testing environment
+
 
 
 
