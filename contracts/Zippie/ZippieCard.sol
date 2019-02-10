@@ -133,14 +133,14 @@ contract ZippieCard {
             // add this card address to the used list
             usedCardAddresses[i] = cardAddress;
 
-            // flag card nonce as used in the card nonce contract, 
+            // flag card nonce as used in the card nonce contract,
             // revert if used already
             require(
                 IZippieCardNonces(_zippieCardNonces).useNonce(
-                    cardAddress, 
+                    cardAddress,
                     cardNonces[i],
-                    v[signatureOffset[0]+i], 
-                    r[signatureOffset[0]+i], 
+                    v[signatureOffset[0]+i],
+                    r[signatureOffset[0]+i],
                     s[signatureOffset[0]+i]
                 )
             );
