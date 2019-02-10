@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="019ff45d-adc8-4f37-8ec6-864d1220b0cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audit/dynamic-analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/audit/dynamic-analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/Zippie/ZippieCard.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/Zippie/ZippieCard.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truffle.js" beforeDir="false" afterPath="$PROJECT_DIR$/truffle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverageEnv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scTopics" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+            <state relative-caret-position="350">
+              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -138,16 +135,15 @@
       <updated>1549335423338</updated>
       <workItem from="1549335425598" duration="3455000" />
       <workItem from="1549485665526" duration="607000" />
-      <workItem from="1549486408840" duration="23535000" />
+      <workItem from="1549486408840" duration="24309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27597000" />
+    <option name="totallyTimeSpent" value="28371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2560" y="-118" width="2560" height="1417" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4996321" visible="true" weight="0.209375" />
       <window_info id="Structure" order="1" sideWeight="0.50036794" side_tool="true" weight="0.209375" />
@@ -375,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+        <state relative-caret-position="350">
+          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>

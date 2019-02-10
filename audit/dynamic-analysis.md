@@ -12,70 +12,6 @@ Report:
 
 <br><!-- ********************************************* -->
 
-## Test cases
-
-What should be checked:
-
-### Common cases
-
-- Contracts
-	- `multisigAndERC20Contract` should be always length of 2
-	- `multisigAndERC20Contract[0]` is a multisig wallet address
-	- `multisigAndERC20Contract[1]` is an ERC20 contract address
-- Signers
- 	- `allSignersPossible` contains unique addresses
-	- `m` (number of signatures required) should be greater than 0
-	- `m` should be less (OR NOT EQUAL?) than 255
-	- `m` should be not more than length of `allSignersPossible` (depends on use case)
-	- `m` should be not more than lengths of signature (/r/v/s) arrays
-- Signatures
-	- lengths of signature (/r/v/s) arrays are equal
- 	- signature arrays (/r/v/s) contain unique signatures or tolerant to duplicate records in the other way
-- Nonce, amount and recipient
-	- `nonce` should be a unique and positive number
-	- `nonce` was not used already
-	- `amount` should be greater than 0
-	- `recipient` address is not equal to 0x0
-- Other
-	- transfer allowed for choosen recipient
-
-
-### Function specific cases
-
-- **checkAndTransferFrom()**
-	- lengths of signature arrays should be equal to `m` + 1
-
-- **checkAndTransferFrom_senderSigner()**
-	- lengths of signature arrays should be equal to `m`
-
-- **checkAndTransferFrom_1of1()**
-	- No `m` param (it is known and equal to 1)
-	- lengths of signature arrays should be equal to 2
-	- length of `allSignersPossible` should be equal to 1
-
-- **checkAndTransferFrom_2of2()**
-	- No `m` param (it is known and equal to 2) -- WRONG COMMENT about `m` = 1
-	- lengths of signature arrays should be equal to 3
-	- length of `allSignersPossible` should be equal to 2
-
-- **checkAndTransferFrom_BlankCheck()**
-	- no `nonce` param
-	- address named `verificationKey` is approved by `allSignersPossible` to sign transfer for `amount`
-	- lengths of signature arrays should be equal to `m` + 2
-	- `verificationKey` used before can not be used again
-
-- **checkIfAddressInArray(address[] validAddresses, address checkAddress)**
-	- should return *true* if `validAddresses` contains `checkAddress`
-	- should return *false* otherwise
-
-- **verifyMultisigKeyAllowsAddresses(address[] signers, uint8 m, address multisigAddress, uint8 v, bytes32 r, bytes32 s)**
-	- should return *true* if the `multisigAddress` is the address used to sign (with keccak256) list of `signers` and amount of required signatures `m`
-	- should return *false* otherwise
-
-
-
-<br>
-
 ## Setup and running tests
 
 1. Installation<br>Download repo this repo, branch **audit**, run terminal, cd to the project, run: `yarn install`
@@ -196,29 +132,23 @@ All files                 |    68.87 |    45.45 |    73.08 |    69.28 |         
 
 ## What is not covered
 
-- **BasicERC20.sol**<br>
-	is a mock contract used to fund multisig wallet and therefore does not require any testing
+#### ZippieWalletBasic.sol
+- No tests at all
 
-- **SafeMath.sol**<br>
-is a standard OpenZeppelin library and does require no testing either.
+#### ZippieCardNonces.sol 
+- [isNonceUsed()](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/3943cc4f77a5b6b3c71c0c7a1c9162f0ea140b97/contracts/Zippie/ZippieCardNonces.sol#L20)
 
-- **ZippieMultisigWallet.sol**<br>
-	is the contract under test and have to be tested deep enough.<br>
+#### ZippieWallet.sol
 
-	Lines of code not fully covered by tests:
+- [redeemCheck()](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/3943cc4f77a5b6b3c71c0c7a1c9162f0ea140b97/contracts/Zippie/ZippieWallet.sol#L49)
 
-	- [129](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L129), [198](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L198): `require(verifyMultisigKeyAllowsAddresses(...));` – but it was tested in line [66](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L66).
-	- [142](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L142), [159](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L159), [222](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L222): `require(checkIfAddressInArray(..));` – it was tested in line [87](https://github.com/zippiehq/personal_multisigs/blob/fe37f263418643bc234ab8cab89e36fbadcb7acc/contracts/ZippieMultisigWallet.sol#L87).
+### Conclusion
 
+- Not all lines of code are covered by tests.
+- Not all possible branches (logic) are covered by tests.
 
-		These lines did not checked for the ELSE condition which is ok, since `require()` will revert whole function and such behaviour is expected by using `require()` itself.
-
-	Another tests missing code is the test function which is have to be deleted (amongst with this comment) from the contract before final deployment to blockchain.
-
-	#### **Technically, we can say that 100% of code are covered by tests...**
-
-	However, it is recommended to cover all code completely since 100% coverage does not require any explanation and increase overall trust to the project. 
-
+We can not say if all possible scenarios are covered because there are no scenarios described.
+We recommended to describe all scenarios and cover all code completely, up to 100%, including branches (logic/possible scenarios). 
 
 
 
@@ -226,7 +156,8 @@ is a standard OpenZeppelin library and does require no testing either.
 
 ## Tests analysis
 
-Consider rewrite test files to check only one case per test; that will decrease complexity and increase readability.
+We did not evaluate the contracts logic covered by tests because of complete lack test cases descriptions.
+All findings are related to the code of the tests itself.
 
 ### Common code
 
