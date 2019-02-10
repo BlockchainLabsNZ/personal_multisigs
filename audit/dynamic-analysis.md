@@ -142,13 +142,12 @@ All files                 |    68.87 |    45.45 |    73.08 |    69.28 |         
 
 - [redeemCheck()](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/3943cc4f77a5b6b3c71c0c7a1c9162f0ea140b97/contracts/Zippie/ZippieWallet.sol#L49)
 
-### Conclusion
+### Overall
 
 - Not all lines of code are covered by tests.
 - Not all possible branches (logic) are covered by tests.
 
 We can not say if all possible scenarios are covered because there are no scenarios described.
-We recommended to describe all scenarios and cover all code completely, up to 100%, including branches (logic/possible scenarios). 
 
 
 
@@ -157,59 +156,45 @@ We recommended to describe all scenarios and cover all code completely, up to 10
 ## Tests analysis
 
 We did not evaluate the contracts logic covered by tests because of complete lack test cases descriptions.
-All findings are related to the code of the tests itself.
+<br>All findings are related to the code of the tests itself.
 
-### Common code
+#### HelpFunctions.js
 
-- Params correctness by Solidity modifiers or `require()` functions
-	- [x] `multisigAndERC20Contract` should be length of 2
-	- [ ] `multisigAndERC20Contract[0]` is a multisig wallet address
-	- [ ] `multisigAndERC20Contract[1]` is an ERC20 contract address
-	- [x] `m` (number of signatures required) should be greater than 0
-	- [x] `m` should be less (OR NOT EQUAL?) than 255
-	- [x] `m` should be less than the number of `allSignersPossible`
-	- [x] `nonce` was not used already
-	- [ ] `amount` should be greater than 0
-	- [ ] `recipient` address is not 0x0
-- Sanity check in the smart contract code
-	- [x] `nonce` is unique
-	- [x] `allSignersPossible` contains the same records – the code is fault tolerant through `usedAddresses[]`
-	- [x] Signature (/r/v/s) arrays contains the same records – the code is fault tolerant through `usedAddresses[]`
-	- [ ] Transfer is allowed – no checks to save on gas as a design decision
+#### Test_ZippieMultisig_BalanceOrAllowanceTooLow.js
+
+#### Test_ZippieMultisig_CheckCashing.js
+
+- Remove unused variables
+	- `card` – [line 31](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L31)
+	- `test` – [definition](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L23), [assigning](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L38)
+
+- favor strict comparison operator (=== vs ==), [line 80](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L80)
+
+#### Test_ZippieMultisig_CheckCashing_Error.js
+
+#### Test_ZippieMultisig_CheckCashingWithCards.js
+
+#### Test_ZippieMultisig_CheckCashingWithCards_Error.js
+
+#### Test_ZippieMultisig_GasSimulation_BlankCheck.js
 
 
-### Function specific code
+### Overall
 
-- **checkAndTransferFrom()**
-	- [x] lengths of signature arrays (/r/v/s) should be equal to `m` + 1
+- There are no formal test cases to check the tests logic
+- Code mostly lacks documentation / comments
+- Tests are too complex and do multiple logic checks in each test
 
-- **checkAndTransferFrom_senderSigner()**
-	- [x] lengths of signature arrays (/r/v/s) should be equal to `m`
 
-- **checkAndTransferFrom_1of1()**
-	- [x] No `m` param (it is known and equal to 1)
-	- [x] lengths of signature arrays should be equal to 2
-	- [x] length of `allSignersPossible` should be equal to 1
 
-- **checkAndTransferFrom_2of2()**
-	- [x] No `m` param (it is known and equal to 2) -- WRONG COMMENT about `m` = 1
-	- [x] lengths of signature arrays should be equal to 3
-	- [x] length of `allSignersPossible` should be equal to 2
+<br><!-- ********************************************* -->
 
-- **checkAndTransferFrom_BlankCheck()**
-	- [x] no `nonce` param
-	- [x] address named `verificationKey` is approved by `allSignersPossible` to sign transfer for `amount`
-	- [x] lengths of signature arrays should be equal to `m` + 2
-	- [x] `verificationKey` used before can not be used again
+## Recommendations 
 
-- **checkIfAddressInArray(address[] validAddresses, address checkAddress)**
-	- [x] should return *true* if `validAddresses` contains `checkAddress`
-	- [x] should return *false* otherwise
-
-- **verifyMultisigKeyAllowsAddresses(address[] signers, uint8 m, address multisigAddress, uint8 v, bytes32 r, bytes32 s)**
-	- [x] should return *true* if the `multisigAddress` is the address used to sign (with keccak256) list of `signers` and amount `m` of required signatures
-	- [x] should return *false* otherwise
-
+- It is strongly recommended to write down formal test cases
+- Describe all scenarios and cover all code completely, up to 100%, including branches (logic/possible scenarios)
+- Break all tests down and having just one `assert` per test
+- Clean up the code from unused varables
 
 
 <br><!-- ********************************************* -->
