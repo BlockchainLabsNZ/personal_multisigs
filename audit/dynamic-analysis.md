@@ -229,7 +229,7 @@ no special issues found
 
 - It is strongly recommended to write down formal test cases
 - Describe all scenarios and cover all code completely, up to 100%, including branches (logic/possible scenarios)
-- Break all tests down and having just one `assert` per test
+- Break all tests down and aim to have just one or two `assert` per test
 - Clean up the code from unused varables
 - Consider using linters to automatically get complaints about code quality, e.g. 
 	- [Standard.js](https://standardjs.com/)
