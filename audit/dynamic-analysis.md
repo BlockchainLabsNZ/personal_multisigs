@@ -158,33 +158,69 @@ We can not say if all possible scenarios are covered because there are no scenar
 We did not evaluate the contracts logic covered by tests because of complete lack test cases descriptions.
 <br>All findings are related to the code of the tests itself.
 
+#### All tests
+
+
+
+- favor ES6 syntax (`let` or `const` over `var`)
+<br>Examples: [24, 25, 26, 30, 54, ...](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L24)
+
+- be consistent and use single instead of double quotation mark
+<br>Examples: [Test_ZippieMultisig_CheckCashingWithCards_Error.js: 173 - 175](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards_Error.js#173-175)
+
+
 #### HelpFunctions.js
 
-#### Test_ZippieMultisig_BalanceOrAllowanceTooLow.js
+no special issues found
 
+#### Test_ZippieMultisig_BalanceOrAllowanceTooLow.js
+- Remove unused variables
+	- `card` – [line 30](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_BalanceOrAllowanceTooLow.js#L30)
+	
 #### Test_ZippieMultisig_CheckCashing.js
 
 - Remove unused variables
 	- `card` – [line 31](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L31)
 	- `test` – [definition](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L23), [assigning](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L38)
 
-- favor strict comparison operator (=== vs ==), [line 80](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L80)
+- be consistent and favor strict comparison operator (=== vs ==)
+<br>line: [80](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing.js#L80)
 
 #### Test_ZippieMultisig_CheckCashing_Error.js
 
+- Remove unused variables
+	- `test` – [line 37](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing_Error.js#L37)
+
+- be consistent and favor strict comparison operator (=== vs ==)
+<br>lines: [73](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing_Error.js#L73), [107](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing_Error.js#L107), [139](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing_Error.js#L139), [165](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing_Error.js#L165), [192](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashing_Error.js#L192)
+
 #### Test_ZippieMultisig_CheckCashingWithCards.js
+
+- be consistent and favor strict comparison operator (=== vs ==)
+<br>lines: [82](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L82), [235](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L235), [274](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L274) 
+
+- do not redeclare `var` variables, use `const` instead
+<br>lines: [161^184](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L184), [203^223](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L223), [243^263](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L263), [282^305](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L305)
 
 #### Test_ZippieMultisig_CheckCashingWithCards_Error.js
 
+- be consistent and favor strict comparison operator (=== vs ==)
+<br>lines: [102](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards_Error.js#L102), [220](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards_Error.js#L220), [302](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards_Error.js#L302) 
+
 #### Test_ZippieMultisig_GasSimulation_BlankCheck.js
 
+- do not redeclare `var` variables, use `const` instead
+<br>lines: [36^79](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L79), [115^168](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L168),
+[56-58^66-68](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L56-68),
+[87-89^97-99](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L87-99),
+...
 
 ### Overall
 
 - There are no formal test cases to check the tests logic
 - Code mostly lacks documentation / comments
 - Tests are too complex and do multiple logic checks in each test
-
+- Code styling is inconsistent
 
 
 <br><!-- ********************************************* -->
@@ -195,6 +231,10 @@ We did not evaluate the contracts logic covered by tests because of complete lac
 - Describe all scenarios and cover all code completely, up to 100%, including branches (logic/possible scenarios)
 - Break all tests down and having just one `assert` per test
 - Clean up the code from unused varables
+- Consider using linters to automatically get complaints about code quality, e.g. 
+	- [Standard.js](https://standardjs.com/)
+	- [eslint-plugin-standard](https://github.com/standard/eslint-plugin-standard)
+
 
 
 <br><!-- ********************************************* -->
