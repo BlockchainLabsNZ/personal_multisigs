@@ -9,8 +9,9 @@
     "test"
   ],
   "scripts": {
-    "node": "ganache-cli -a 101 -m zippie",
+    "node": "ganache-cli -a 101 -m zippie -i 42",
     "test": "truffle test",
+    "test:kovan": "truffle test --network kovan",
     "flatten": "truffle-flattener contracts/zippie/ZippieWallet.sol > ZippieWallet-flat.sol",
     "coverage": "./node_modules/.bin/solidity-coverage --network development && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
   },

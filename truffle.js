@@ -6,6 +6,13 @@ module.exports = {
 			host: "localhost",
 			port: 8545,
 			network_id: "*", // Match any network id
+		},
+		kovan: {
+			// host: 'https://kovan.infura.io',
+			// host: 'https://kovan.infura.io/v3/5cb806fa94854899b53caf71ce775809',
+			host: "localhost",
+			port: 8545,
+			network_id: '42'
 		}
 	},
 	solc: {
