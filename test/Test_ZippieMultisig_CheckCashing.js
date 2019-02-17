@@ -33,7 +33,10 @@ contract("Test Zippie Multisig Check Cashing Functionality", (accounts) => {
 	let multisig = accounts[5] // multisig wallet (sender, don't sign with this account since the private key should be forgotten at creation)
 	const sponsor = accounts[6] // Zippie PMG server
 
-	console.log("Multisig acc", accounts[5])
+	console.log(
+		'\n----------------------\n',
+		'Multisig account: ', accounts[5],
+		'\n----------------------\n')
 	
 	beforeEach(() => {
 		return TestFunctions.new().then(instance => {
@@ -67,7 +70,6 @@ contract("Test Zippie Multisig Check Cashing Functionality", (accounts) => {
 		const blankCheckSignature = await getBlankCheckSignature(verificationKey, signer, "1")
 		const recipientSignature = await getRecipientSignature(recipient, verificationKey)
 		const signature = getSignatureFrom3(multisigSignature, blankCheckSignature, recipientSignature)
-
 
 		await zippieWallet.redeemBlankCheck(
 			addresses,
