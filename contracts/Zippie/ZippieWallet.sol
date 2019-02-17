@@ -178,7 +178,7 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
       * @return true if transfer successful 
       */
     function redeemBlankCheck(
-        address[] memory addresses, 
+        address[] memory addresses,
         address[] memory signers, 
         uint8[] memory m, 
         uint8[] memory v, 
@@ -210,7 +210,7 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
             cardNonces.length, 
             limitExceeded
         );
-        
+
         // verify that account signature is valid
         verifyMultisigAccountSignature(
             signers, 
@@ -253,6 +253,8 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
             r, 
             s
         );
+
+        require( 0 > 1, '-----------');
 
         // if limit is exceeded (2FA)
         // verify that requied number of 
