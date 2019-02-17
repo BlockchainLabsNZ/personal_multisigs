@@ -20,8 +20,14 @@ module.exports = {
 }
 
 async function getMultisigSignature(signers, m, multisig) {
+	const pk = '0xDEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB'
 	const multisigHash = await test.soliditySha3_addresses_m(signers, m);
+
+	// const multisigSignature = await web3.eth.accounts.sign(multisigHash, pk);
+	// return { v: web3.utils.hexToNumber(multisigSignature.v), r: multisigSignature.r, s: multisigSignature.s }
+
 	const multisigSignature = await web3.eth.sign(multisigHash, multisig);
+	// console.log(	multisigSignature)
 	return getRSV(multisigSignature.slice(2))
 }
 
@@ -41,9 +47,18 @@ function getSignature(multisigSignature, blankCheckSignature, digestSignature, r
 }
  async function getBlankCheckSignature(verificationKey, signer, amount) {
 	// sign by multisig signer
-	const blankCheckHash = await test.soliditySha3_name_amount_address("redeemBlankCheck", web3.utils.toWei(amount, "ether"), verificationKey);
-	const blankCheckSignature = await web3.eth.sign(blankCheckHash, signer);
+	 const pk = '0xEFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E'
+
+	 const blankCheckHash = await test.soliditySha3_name_amount_address("redeemBlankCheck", web3.utils.toWei(amount, "ether"), verificationKey);
+	const blankCheckSignature = await web3.eth.accounts.sign(blankCheckHash, pk);
+	// console.log(blankCheckSignature)
+	return { v: web3.utils.hexToNumber(blankCheckSignature.v), r: blankCheckSignature.r, s: blankCheckSignature.s }
+
+
+	// const blankCheckSignature = await web3.eth.sign(blankCheckHash, signer);
 	return getRSV(blankCheckSignature.slice(2))
+
+
 }
 
 async function getNonceSignature(nonce, verificationKey) {
@@ -66,6 +81,7 @@ async function getDigestSignature(digestHash, card) {
 }
 
 function getSignatureFrom3(multisigSignature, blankCheckSignature, recipientSignature) {
+	console.log('\nMSultisigSignature\n', multisigSignature, '\nBlankcheck\n', blankCheckSignature, '\nRecipientSignature\n',  recipientSignature)
 	const v = [multisigSignature.v, recipientSignature.v, blankCheckSignature.v]
 	const r = [multisigSignature.r.valueOf(), recipientSignature.r.valueOf(), blankCheckSignature.r.valueOf()]
 	const s = [multisigSignature.s.valueOf(), recipientSignature.s.valueOf(), blankCheckSignature.s.valueOf()]

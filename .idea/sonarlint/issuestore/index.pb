@@ -17,3 +17,5 @@ A
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
 I
 audit/dynamic-analysis.md,a/f/af94b139dd1669ce22d485f16fba4576208b8d2f
+Y
+)migrations/2_zippie_multisig_migration.js,4/0/4004a2b8e177897693dbb922039941b3412d90bd

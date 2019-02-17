@@ -10,8 +10,10 @@
   ],
   "scripts": {
     "node": "ganache-cli -a 101 -m zippie -i 42",
+    "node:kovan": "parity --chain kovan --no-warp --unlock 0xdc6a1d0211b9d505cde594b8fe33e98945bccbd4 --password /Users/guest/Dev/Blockchains/Ethereum/Kovan/keys/.password --keys-path /Users/guest/Dev/Blockchains/Ethereum/Kovan/keys",
     "test": "truffle test",
     "test:kovan": "truffle test --network kovan",
+    "test:infura": "truffle test --network infura",
     "flatten": "truffle-flattener contracts/zippie/ZippieWallet.sol > ZippieWallet-flat.sol",
     "coverage": "./node_modules/.bin/solidity-coverage --network development && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
@@ -42,11 +44,14 @@
     "solidity-coverage": "latest",
     "ganache-cli": "^6.2.3",
     "openzeppelin-solidity": "latest",
+    "ethereumjs-wallet": "latest",
     "truffle": "^5.0.0-beta.2",
     "truffle-flattener": "^1.2.10"
   },
   "dependencies": {
     "solc": "^0.4.24",
-    "solhint": "^1.5.1"
+    "solhint": "^1.5.1",
+    "truffle-hdwallet-provider": "^1.0.4",
+    "truffle-privatekey-provider": "^1.1.0"
   }
 }

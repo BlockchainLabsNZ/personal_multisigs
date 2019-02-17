@@ -6,9 +6,16 @@ Prepared by:
 
 Report:
 
-- February 12, 2019 – date of delivery
-- February 12, 2019 – last report update
+- February 15, 2019 – date of delivery
+- February 15, 2019 – last report update
 
+
+<br><!-- ********************************************* -->
+
+## Scope
+
+Only public functions of Multisig contracts are the scope of this audit.<br>
+The other components of application are out of scope.
 
 <br><!-- ********************************************* -->
 
@@ -21,18 +28,25 @@ Tests are conducted on the Ropsten test network. The following contract has been
 - [ZippieCard](https://ropsten.etherscan.io/tx/0xe17b6f548015a4c21583dffb8d9b24c5c628f4e5fc86093d28fd28eb658ec5be)
 - [ZippieMultisig](https://ropsten.etherscan.io/tx/0x256670d113700e2ddbc398edbfdaa6f88432d92fe42ddd3f2d4305fc3f18b507)
 - [ZippieWallet](https://ropsten.etherscan.io/tx/0x5d73c091e79b03b8ca849017b07845bb9061672a31d48ddbb30ed2b98d8a19d8)
+- [BLABS Coin](https://ropsten.etherscan.io/address/0x11465b1cd69161b4fe80697e10278228853fc33b) – for testing purpose
 
 ### Accounts
 
 * Owner: [0x7123fc4fcfcc0fdba49817736d67d6cfdb43f5b6](https://ropsten.etherscan.io/address/0x7123fc4fcfcc0fdba49817736d67d6cfdb43f5b6)
 
+- "Multisig" account (one of the signers) 
+	- address:0x9A7dd0851b69999D62724b1C38A88988D0Fb955D
+	- PK: DEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB
+
+- "Signature Author" account (person who initiate the transfer, sender)
+	- address: 0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6
+	- private key: EFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E
 
 
 <br><!-- ********************************************* -->
 
 ## Expected behaviour tests
 
-Only public functions were tested.
 
 ### ZippieCardNonce.sol
 
@@ -61,15 +75,10 @@ Only public functions were tested.
 
 ##### redeemBlankCheck( ...*params*... ) public returns (bool)
 
-- params:
-	- `address[] memory addresses`
-	- `address[] memory signers`
-	- `uint8[] memory m`
-	- `uint8[] memory v`
-	- `bytes32[] memory r`, 
-	- `bytes32[] memory s`
-	- `uint256 amount`
-	- `bytes32[] memory cardNonces`
+- [ ] Should transfer if all conditions are satisfied
 
--  asdf
-	-  [ ] asdf
+## Conclusion
+
+
+We do not expect any security issues with Multisig contract itself.
+
