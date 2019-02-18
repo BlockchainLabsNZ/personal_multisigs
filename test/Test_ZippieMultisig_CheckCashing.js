@@ -48,9 +48,9 @@ contract("Test Zippie Multisig Check Cashing Functionality", (accounts) => {
 		});
 	});
 
-	it.only("should allow a blank check to be cashed once from a 1 of 1 multisig, and fail the second time", async () => {
+	it("should allow a blank check to be cashed once from a 1 of 1 multisig, and fail the second time", async () => {
 
-		// multisig = '0x9A7dd0851b69999D62724b1C38A88988D0Fb955D'
+		multisig = '0x9A7dd0851b69999D62724b1C38A88988D0Fb955D'
 		// basicToken.address = '0x11465b1cd69161b4fe80697e10278228853fc33b'
 		recipient = '0x0000000210198695da702d62b08B0444F2233F9C'
 		signer = '0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6'
@@ -72,7 +72,7 @@ contract("Test Zippie Multisig Check Cashing Functionality", (accounts) => {
 			'\n------------------------------------------------------------------\n')
 
 
-		await zippieWallet.redeemBlankCheck(
+		const result = await zippieWallet.redeemBlankCheck(
 			addresses,
 			signers,
 			m,
@@ -83,6 +83,10 @@ contract("Test Zippie Multisig Check Cashing Functionality", (accounts) => {
 			[],
 			{from: sponsor}
 		);
+		
+		console.log("result:", result)
+
+		assert(result.tx, "something wrong")
 
 	});
 

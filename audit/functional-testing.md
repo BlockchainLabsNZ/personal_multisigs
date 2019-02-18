@@ -32,20 +32,57 @@ Tests are conducted on the Ropsten test network. The following contract has been
 
 ### Accounts
 
-* Owner: [0x7123fc4fcfcc0fdba49817736d67d6cfdb43f5b6](https://ropsten.etherscan.io/address/0x7123fc4fcfcc0fdba49817736d67d6cfdb43f5b6)
+- [BLABS token](https://ropsten.etherscan.io/address/0x11465b1cd69161b4fe80697e10278228853fc33b) ([repo](https://github.com/BlockchainLabsNZ/blabs-coin))
 
 - "Multisig" account (one of the signers) 
 	- address:0x9A7dd0851b69999D62724b1C38A88988D0Fb955D
-	- PK: DEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB
+	- Private Key: DEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB
 
-- "Signature Author" account (person who initiate the transfer, sender)
+- "Sender" account (also signer, person who initiate the transfer)
 	- address: 0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6
 	- private key: EFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E
 
+- "Card nonces" (from the test file):
+	- 
 
 <br><!-- ********************************************* -->
 
 ## Expected behaviour tests
+
+
+
+### ZippieWallet.sol
+
+##### redeemBlankCheck( ...*params*... ) public returns (bool)
+
+To perform the test we called `redeemBlankCheck()` with the following params:
+
+- `addresses`: [
+	- "0x9A7dd0851b69999D62724b1C38A88988D0Fb955D",   
+	- "0x11465b1cd69161b4fe80697e10278228853fc33b",        (*Blabs token*)
+	- "0x0000000210198695da702d62b08B0444F2233F9C",        (*receipient*)
+	- "0xC1D7Bd24bf47D12a3a518984B296afC6d0d941aC" ]       (*random account*)
+- `signers`:  
+	- [ "0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6" ]
+- `m`: [ 1, 1, 0, 0 ]
+- `v`: [ 27, 28, 27 ]
+- `r`: [ 
+	- "0x6d30fc07f763a6228060c963d75260d9b66bdc17791a4656fa6a393dad08a7da", 
+	- "0xeffb3c8826c3619f4fc96d69280b1f1816eb4aa3ecf744d9eea2f9dfd877ebc4",   
+	- 0xdfaed6d5162a7147b867c300447dda654ab83308517bbe50c2608c1405bec6a0" ]
+- `s`: [ 
+	- "0x3f75ca4007b2229838db4a023f04b0e087faebf7356f4738bbe4946abb0327f1", 
+	- "0x1c7c6427964509e375b8da3c386222860583f93edbee32db3de788795c3739f6", 
+	- "0x2b1e7b64a170cd9a1b65cabd24f577f034a73a2f39ffa0ace04492766f23b790" ]
+- `amount`: 1000000000000000000
+- cardNonces: []
+
+###### Test results
+
+- [x] Transfer succeed if one signature required and given (the sender himself, no cards, no other signatures) [0xc3dc9f](https://ropsten.etherscan.io/tx/0xc3dc9ff27e422a38371ef991959afb14bb05e14f0514e0113c273d3ca4106aa9)
+- [x] Transfer failed if two signature required and one given, no card nonces provided [0x72e5c8](https://ropsten.etherscan.io/tx/0x72e5c8f670ab5c4fe9ef47487e3ceeff7ccb84cacdbb9c8457f52107660c8e9e)
+- [] Transfer succeed if two signature required and one given (the sender himself + card nonces provided) [0x000000]()
+- [] Transfer succeed if two signature required and two given (the sender himself + one other signature) [0x000000]()
 
 
 ### ZippieCardNonce.sol
@@ -66,19 +103,13 @@ Tests are conducted on the Ropsten test network. The following contract has been
 -  Non-existing signer
 	-  [ ] should return false in all scenarios
 
-### ZippieWallet.sol
-
-##### redeemCheck( ...*params*... ) public returns (bool)
-
-- [ ] Should transfer if all conditions are satisfied
-
-
-##### redeemBlankCheck( ...*params*... ) public returns (bool)
-
-- [ ] Should transfer if all conditions are satisfied
-
+	
+<br><!-- ********************************************* -->
+	
 ## Conclusion
 
 
 We do not expect any security issues with Multisig contract itself.
+
+
 

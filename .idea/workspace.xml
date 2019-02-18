@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="019ff45d-adc8-4f37-8ec6-864d1220b0cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit/functional-testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/audit/functional-testing.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/Zippie/ZippieWallet.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/Zippie/ZippieWallet.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/HelpFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/HelpFunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,10 +23,10 @@
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js">
+            <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
-                  <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+                <state relative-caret-position="-34">
+                  <caret line="49" column="129" lean-forward="true" selection-start-line="49" selection-start-column="129" selection-end-line="49" selection-end-column="129" />
                 </state>
               </provider>
             </entry>
@@ -32,59 +36,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/contracts/Zippie/ZippieWallet.sol">
+            <entry file="file://$PROJECT_DIR$/test/HelpFunctions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1119">
-                  <caret line="256" column="20" selection-start-line="256" selection-start-column="20" selection-end-line="256" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#178#349#0" />
-                    <element signature="n#!!block;n#redeemCheck#0;n#ZippieWallet#0" />
-                    <element signature="e#2520#2560#0" />
-                    <element signature="e#2863#2904#0" />
-                    <element signature="e#3085#3146#0" />
-                    <element signature="e#3155#3202#0" />
-                    <element signature="e#3522#3571#0" />
-                    <element signature="e#3580#3636#0" />
-                    <element signature="e#3645#3694#0" />
-                    <element signature="e#3703#3746#0" />
-                    <element signature="e#3755#3809#0" />
-                    <element signature="e#3818#3851#0" />
-                    <element signature="e#4218#4247#0" />
-                    <element signature="e#4256#4289#0" />
-                    <element signature="e#4298#4335#0" />
-                    <element signature="e#4363#4695#1" />
-                    <element signature="e#4377#4414#0" />
-                    <element signature="e#4427#4459#0" />
-                    <element signature="e#4705#4766#0" />
-                    <element signature="e#4941#6367#0" />
-                    <element signature="e#9334#10724#0" />
-                    <element signature="n#!!block;n#setLimit#0;n#ZippieWallet#0" />
-                    <element signature="e#11170#11210#0" />
-                    <element signature="e#11513#11554#0" />
-                    <element signature="e#11735#11796#0" />
-                    <element signature="e#11805#11853#0" />
-                    <element signature="e#12173#12211#0" />
-                    <element signature="e#12220#12275#0" />
-                    <element signature="e#12284#12324#0" />
-                    <element signature="e#12333#12387#0" />
-                    <element signature="e#12396#12429#0" />
-                    <element signature="e#12779#12826#0" />
-                    <element signature="e#12835#12868#0" />
-                    <element signature="e#12877#12914#0" />
-                    <element signature="e#12942#13274#1" />
-                    <element signature="e#12956#12993#0" />
-                    <element signature="e#13006#13038#0" />
-                    <element signature="e#13284#13321#0" />
-                    <element signature="e#13400#13471#0" />
-                    <element signature="n#!!block;n#checkSignatureParameters#0;n#ZippieWallet#0" />
-                    <element signature="e#14845#14896#0" />
-                    <element signature="e#14930#15599#1" />
-                    <element signature="e#15605#16518#1" />
-                    <element signature="e#15619#15672#0" />
-                    <element signature="e#15685#15738#0" />
-                    <element signature="e#16551#16623#0" />
-                    <element signature="n#!!block;n#isLimitExceeded#0;n#ZippieWallet#0" />
-                  </folding>
+                <state relative-caret-position="-593">
+                  <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -119,8 +74,9 @@
         <option value="$PROJECT_DIR$/migrations/2_zippie_multisig_migration.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/truffle.js" />
-        <option value="$PROJECT_DIR$/test/HelpFunctions.js" />
         <option value="$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js" />
+        <option value="$PROJECT_DIR$/test/HelpFunctions.js" />
+        <option value="$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards.js" />
         <option value="$PROJECT_DIR$/contracts/Zippie/ZippieWallet.sol" />
       </list>
     </option>
@@ -147,29 +103,13 @@
             <path>
               <item name="zippie-multisig-2" type="b2602c69:ProjectViewProjectNode" />
               <item name="zippie-multisig-2" type="462c0819:PsiDirectoryNode" />
-              <item name="audit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zippie-multisig-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zippie-multisig-2" type="462c0819:PsiDirectoryNode" />
               <item name="contracts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zippie-multisig-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zippie-multisig-2" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zippie-multisig-2" type="b2602c69:ProjectViewProjectNode" />
               <item name="zippie-multisig-2" type="462c0819:PsiDirectoryNode" />
               <item name="contracts" type="462c0819:PsiDirectoryNode" />
               <item name="Zippie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zippie-multisig-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zippie-multisig-2" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zippie-multisig-2" type="b2602c69:ProjectViewProjectNode" />
@@ -229,12 +169,12 @@
       <workItem from="1550089932717" duration="3303000" />
       <workItem from="1550102975135" duration="915000" />
       <workItem from="1550119875960" duration="558000" />
-      <workItem from="1550182682382" duration="12491000" />
+      <workItem from="1550182682382" duration="16849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66762000" />
+    <option name="totallyTimeSpent" value="71120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2560" y="-118" width="2560" height="1417" extended-state="6" />
@@ -388,20 +328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1154">
-          <caret line="315" column="25" selection-start-line="315" selection-start-column="25" selection-end-line="315" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards_Error.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.babelrc">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -457,22 +383,12 @@
     <entry file="file://$PROJECT_DIR$/migrations/1_initial_migration.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Test/BasicERC20Mock.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/migrations/2_zippie_multisig_migration.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Test/BasicERC20MockOwner.sol">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/Zippie/ZippieMultisig.sol">
       <provider selected="true" editor-type-id="text-editor">
@@ -531,24 +447,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Test/TestFunctions.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contracts/flattened/ZippieWallet_flattened.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/HelpFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="47" column="73" lean-forward="true" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -575,19 +477,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Test/BasicERC20Mock.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Test/BasicERC20MockOwner.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Test/TestFunctions.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards_Error.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="175" column="5" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        <state relative-caret-position="732">
+          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/HelpFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593">
+          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/Zippie/ZippieWallet.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="256" column="20" selection-start-line="256" selection-start-column="20" selection-end-line="256" selection-end-column="20" />
+        <state relative-caret-position="436">
+          <caret line="364" column="10" lean-forward="true" selection-start-line="364" selection-start-column="10" selection-end-line="364" selection-end-column="10" />
           <folding>
             <element signature="e#178#349#0" />
+            <element signature="e#551#1982#0" />
             <element signature="n#!!block;n#redeemCheck#0;n#ZippieWallet#0" />
             <element signature="e#2520#2560#0" />
             <element signature="e#2863#2904#0" />
@@ -607,34 +541,16 @@
             <element signature="e#4427#4459#0" />
             <element signature="e#4705#4766#0" />
             <element signature="e#4941#6367#0" />
-            <element signature="e#9334#10724#0" />
-            <element signature="n#!!block;n#setLimit#0;n#ZippieWallet#0" />
-            <element signature="e#11170#11210#0" />
-            <element signature="e#11513#11554#0" />
-            <element signature="e#11735#11796#0" />
-            <element signature="e#11805#11853#0" />
-            <element signature="e#12173#12211#0" />
-            <element signature="e#12220#12275#0" />
-            <element signature="e#12284#12324#0" />
-            <element signature="e#12333#12387#0" />
-            <element signature="e#12396#12429#0" />
-            <element signature="e#12779#12826#0" />
-            <element signature="e#12835#12868#0" />
-            <element signature="e#12877#12914#0" />
-            <element signature="e#12942#13274#1" />
-            <element signature="e#12956#12993#0" />
-            <element signature="e#13006#13038#0" />
-            <element signature="e#13284#13321#0" />
-            <element signature="e#13400#13471#0" />
             <element signature="n#!!block;n#checkSignatureParameters#0;n#ZippieWallet#0" />
-            <element signature="e#14845#14896#0" />
-            <element signature="e#14930#15599#1" />
-            <element signature="e#15605#16518#1" />
-            <element signature="e#15619#15672#0" />
-            <element signature="e#15685#15738#0" />
-            <element signature="e#16551#16623#0" />
             <element signature="n#!!block;n#isLimitExceeded#0;n#ZippieWallet#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Test_ZippieMultisig_CheckCashingWithCards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="49" column="129" lean-forward="true" selection-start-line="49" selection-start-column="129" selection-end-line="49" selection-end-column="129" />
         </state>
       </provider>
     </entry>

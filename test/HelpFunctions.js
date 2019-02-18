@@ -23,10 +23,10 @@ async function getMultisigSignature(signers, m, multisig) {
 	const pk = '0xDEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB'
 	const multisigHash = await test.soliditySha3_addresses_m(signers, m);
 
-	// const multisigSignature = await web3.eth.accounts.sign(multisigHash, pk);
-	// return { v: web3.utils.hexToNumber(multisigSignature.v), r: multisigSignature.r, s: multisigSignature.s }
+	const multisigSignature = await web3.eth.accounts.sign(multisigHash, pk);
+	return { v: web3.utils.hexToNumber(multisigSignature.v), r: multisigSignature.r, s: multisigSignature.s }
 
-	const multisigSignature = await web3.eth.sign(multisigHash, multisig);
+	// const multisigSignature = await web3.eth.sign(multisigHash, multisig);
 	// console.log(	multisigSignature)
 	return getRSV(multisigSignature.slice(2))
 }

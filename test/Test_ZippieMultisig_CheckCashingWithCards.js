@@ -25,11 +25,11 @@ contract("Test Zippie Multisig Check Cashing With Cards Functionality", (account
 	var zippieCardNonces;
 	var zippieWallet;
 
-	const signer = accounts[0] // multisig signer (1of1)
-	const recipient = accounts[2]
+	let signer = accounts[0] // multisig signer (1of1)
+	let recipient = accounts[2]
 	var card = accounts[3]
-	const verificationKey = accounts[4] // random verification key
-	const multisig = accounts[5] // multisig wallet (sender, don't sign with this account since the private key should be forgotten at creation)
+	let verificationKey = accounts[23] // random verification key
+	let multisig = accounts[5] // multisig wallet (sender, don't sign with this account since the private key should be forgotten at creation)
 	const sponsor = accounts[6] // Zippie PMG server
 
 	beforeEach(() => {
@@ -47,9 +47,15 @@ contract("Test Zippie Multisig Check Cashing With Cards Functionality", (account
 		});
 	});
 
-	it("should allow a blank check to be cashed once from a 1 of 1 multisig with 2FA, and fail the second time", async () => {
+	it.only("should allow a blank check to be cashed once from a 1 of 1 multisig with 2FA, and fail the second time", async () => {
 		const digestSignature = await getHardcodedDigestSignature(0, 0)
 		card = digestSignature.pubkey
+
+		multisig = '0x9A7dd0851b69999D62724b1C38A88988D0Fb955D'
+		// basicToken.address = '0x11465b1cd69161b4fe80697e10278228853fc33b'
+		recipient = '0x0000000210198695da702d62b08B0444F2233F9C'
+		signer = '0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6'
+
 
 		var addresses = [multisig, basicToken.address, recipient, verificationKey]
 		const signers = [signer, card]
@@ -66,6 +72,10 @@ contract("Test Zippie Multisig Check Cashing With Cards Functionality", (account
 		assert(await zippieWallet.usedNonces(multisig, verificationKey) === false, "check already marked as cashed before transfer");
 		
 		const amount = web3.utils.toWei("1", "ether")
+
+		console.log("Here it is", addresses, signers, m, signature.v, signature.r, signature.s, amount, [digestSignature.digestHash], {from: sponsor})
+
+
 		await zippieWallet.redeemBlankCheck(addresses, signers, m, signature.v, signature.r, signature.s, amount, [digestSignature.digestHash], {from: sponsor});
 
 		var newBalanceSender = await basicToken.balanceOf(multisig)
