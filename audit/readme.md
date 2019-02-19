@@ -1,9 +1,4 @@
-# Project Name smart contracts audit report
-# Project Name security assessment 
-# Project Name "what specifically we have done" report 
-
-Prepared by: 
-
+# Zippie Multisig
 
 Prepared by:
 
@@ -12,8 +7,8 @@ Prepared by:
 
 Report:
 
-- February 15, 2019 – date of delivery
-- February 15, 2019 – last report update
+- February 19, 2019 – date of delivery
+- February 19, 2019 – last report update
 
 
 
@@ -52,7 +47,6 @@ The following contracts were subject for static, dynamic and functional analyses
   - [ZippieMultisig.sol](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Zippie/ZippieMultisig.sol)
 - Other contracts
   - [Tests](https://github.com/BlockchainLabsNZ/zippie-multisig-2/tree/master/contracts/Test)
-  - [....sol](https://github.com/)
   - [Migrations.sols](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/master/contracts/Migrations.sol)
 
 #### Tests
@@ -63,8 +57,8 @@ The following contracts were subject for static, dynamic and functional analyses
 
 ### Out of scope
 
-- Signing transactions by external actors
-- Tokens and token contracts deployment
+- Process of signing transactions by external actors
+- Tokens, token contracts, vault, all other code except Multisig itself
 
 
 <br><!-- ******************************************************** -->
