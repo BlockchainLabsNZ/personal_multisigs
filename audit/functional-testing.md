@@ -32,8 +32,6 @@ Tests are conducted on the Ropsten test network. The following contract has been
 
 ### Accounts
 
-- [BLABS token](https://ropsten.etherscan.io/address/0x11465b1cd69161b4fe80697e10278228853fc33b) ([repo](https://github.com/BlockchainLabsNZ/blabs-coin))
-
 - "Multisig" account (one of the signers) 
 	- address:0x9A7dd0851b69999D62724b1C38A88988D0Fb955D
 	- Private Key: DEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB
@@ -46,8 +44,14 @@ Tests are conducted on the Ropsten test network. The following contract has been
 	- address: 0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6
 	- private key: EFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E
 
-- "Card nonces" (from the test file):
-	- 
+- "Card nonces" (from the test's hardcoded values):
+	- 0x40B4eC8EC80b485118816FF998Ce4E54c88aBD20
+
+- [BLABS token](https://ropsten.etherscan.io/address/0x11465b1cd69161b4fe80697e10278228853fc33b) ([repo](https://github.com/BlockchainLabsNZ/blabs-coin))
+
+		In order to get sign transactions, one should send tokens to Multisig 
+		account and approve (ERC20 function) the future spending.
+
 
 <br><!-- ********************************************* -->
 

@@ -24,8 +24,8 @@ async function getMultisigSignature(signers, m, multisig) {
 	const pk = '0xE73A51303B5330BEB14839019804B50992478F74E7163042ED65365DC606FAEB'
 	const multisigHash = await test.soliditySha3_addresses_m(signers, m);
 
-	const multisigSignature = await web3.eth.accounts.sign(multisigHash, pk);
-	return { v: web3.utils.hexToNumber(multisigSignature.v), r: multisigSignature.r, s: multisigSignature.s }
+	const { v, r, s} = await web3.eth.accounts.sign(multisigHash, pk);
+	return { v: web3.utils.hexToNumber(v), r, s}
 
 	// const multisigSignature = await web3.eth.sign(multisigHash, multisig);
 	// console.log(	multisigSignature)
@@ -40,26 +40,47 @@ async function getRecipientSignature(recipient, verificationKey) {
 }
 
 function getSignature(multisigSignature, blankCheckSignature, digestSignature, recipientSignature) {
-	const v = [multisigSignature.v, recipientSignature.v, blankCheckSignature.v, digestSignature.v]
-	const r = [multisigSignature.r.valueOf(), recipientSignature.r.valueOf(), blankCheckSignature.r.valueOf(), digestSignature.r.valueOf()]
-	const s = [multisigSignature.s.valueOf(), recipientSignature.s.valueOf(), blankCheckSignature.s.valueOf(), digestSignature.s.valueOf()]
 
-	return {v:v, r:r, s:s}
+	const v = signatures.map(sig => sig.v.valueOf())
+	const r = signatures.map(sig => sig.r.valueOf())
+	const s = signatures.map(sig => sig.s.valueOf())
+
+	// const v = [
+	// 	multisigSignature.v,
+	// 	recipientSignature.v,
+	// 	blankCheckSignature.v,
+	// 	digestSignature.v
+	// ]
+	// const r = [
+	// 	multisigSignature.r.valueOf(),
+	// 	recipientSignature.r.valueOf(),
+	// 	blankCheckSignature.r.valueOf(),
+	// 	digestSignature.r.valueOf()
+	// ]
+	// const s = [
+	// 	multisigSignature.s.valueOf(),
+	// 	recipientSignature.s.valueOf(),
+	// 	blankCheckSignature.s.valueOf(),
+	// 	digestSignature.s.valueOf()
+	// ]
+
+	return {v, r, s}
 }
+
  async function getBlankCheckSignature(verificationKey, signer, amount) {
 	// sign by multisig signer
-	 const pk = '0xEFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E'
+	 	const pk = '0xEFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E'
+	 	const blankCheckHash = await test.soliditySha3_name_amount_address(
+	 		"redeemBlankCheck",
+			web3.utils.toWei(amount, "ether"),
+			verificationKey
+		)
+		const { v, r, s } = await web3.eth.accounts.sign(blankCheckHash, pk)
 
-	 const blankCheckHash = await test.soliditySha3_name_amount_address("redeemBlankCheck", web3.utils.toWei(amount, "ether"), verificationKey);
-	const blankCheckSignature = await web3.eth.accounts.sign(blankCheckHash, pk);
-	// console.log(blankCheckSignature)
-	return { v: web3.utils.hexToNumber(blankCheckSignature.v), r: blankCheckSignature.r, s: blankCheckSignature.s }
-
+	 	return { v: web3.utils.hexToNumber(v), r, s }
 
 	// const blankCheckSignature = await web3.eth.sign(blankCheckHash, signer);
-	return getRSV(blankCheckSignature.slice(2))
-
-
+	// return getRSV(blankCheckSignature.slice(2))
 }
 
 async function getNonceSignature(nonce, verificationKey) {

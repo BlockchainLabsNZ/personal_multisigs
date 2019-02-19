@@ -63,12 +63,20 @@ contract("Test Zippie Multisig Check Cashing With Cards Functionality", (account
 		const multisigSignature = await getMultisigSignature(signers, m, multisig)
 		const blankCheckSignature = await getBlankCheckSignature(verificationKey, signer, "1")
 		const recipientSignature = await getRecipientSignature(recipient, verificationKey)
-		
-		const signature = getSignature(
+
+		const signatures = [
 			multisigSignature,
 			blankCheckSignature,
 			digestSignature,
 			recipientSignature
+		]
+
+		const signature = getSignature(
+			signatures
+			// multisigSignature,
+			// blankCheckSignature,
+			// digestSignature,
+			// recipientSignature
 		)
 
 		const initialBalanceSender = await basicToken.balanceOf(multisig)
