@@ -38,6 +38,10 @@ Tests are conducted on the Ropsten test network. The following contract has been
 	- address:0x9A7dd0851b69999D62724b1C38A88988D0Fb955D
 	- Private Key: DEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB
 
+- "Multisig 2" account (one of the signers) 
+	- address: 0xd6498DF7Bc8b5DB4aC11FC284F2F5173abF61D67
+	- Private Key: E73A51303B5330BEB14839019804B50992478F74E7163042ED65365DC606FAEB
+
 - "Sender" account (also signer, person who initiate the transfer)
 	- address: 0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6
 	- private key: EFDFFF42377B32FEC40EF4B9A44077D3BC1F1E7B845E70C51AFD104041852A1E

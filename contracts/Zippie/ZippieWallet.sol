@@ -190,7 +190,6 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
         public 
         returns (bool)
     {
-        return true;
         require(
             addresses.length == 4, 
             "Incorrect number of addresses"
@@ -235,7 +234,7 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
             r[1], 
             s[1]
         );
-        return true;
+
         // get the check hash (amount, nonce) 
         // and verify that required number of signers signed it 
         // (recipient is specified when check is claimed)
@@ -254,7 +253,7 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
             r, 
             s
         );
-        return true;
+
         // if limit is exceeded (2FA)
         // verify that requied number of 
         // card signatures has been provided 
@@ -271,7 +270,7 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
                 s
             );
         }
-        return true;
+
         // transfer tokens from multisig account to recipient address
         require(
             IERC20(addresses[1]).transferFrom(addresses[0], addresses[2], amount), 
@@ -373,7 +372,7 @@ contract ZippieWallet is ZippieMultisig, ZippieCard {
             keccak256(abi.encodePacked("setLimit", amount, addresses[1]))
         );
         verifyMultisigSignerSignatures(
-            limitHash, m
+            limitHash,
             [0, m[0]], 
             signers, 
             [2, m[1]], 

@@ -50,12 +50,11 @@ contract("Test Zippie Multisig Check Cashing With Cards Functionality", (account
 	it.only("should allow a blank check to be cashed once from a 1 of 1 multisig with 2FA, and fail the second time", async () => {
 		const digestSignature = await getHardcodedDigestSignature(0, 0)
 		card = digestSignature.pubkey
+		// multisig = '0x9A7dd0851b69999D62724b1C38A88988D0Fb955D'
+		multisig = '0xd6498DF7Bc8b5DB4aC11FC284F2F5173abF61D67'
 
-		multisig = '0x9A7dd0851b69999D62724b1C38A88988D0Fb955D'
-		// basicToken.address = '0x11465b1cd69161b4fe80697e10278228853fc33b'
 		recipient = '0x0000000210198695da702d62b08B0444F2233F9C'
 		signer = '0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6'
-
 
 		var addresses = [multisig, basicToken.address, recipient, verificationKey]
 		const signers = [signer, card]
@@ -65,7 +64,12 @@ contract("Test Zippie Multisig Check Cashing With Cards Functionality", (account
 		const blankCheckSignature = await getBlankCheckSignature(verificationKey, signer, "1")
 		const recipientSignature = await getRecipientSignature(recipient, verificationKey)
 		
-		const signature = getSignature(multisigSignature, blankCheckSignature, digestSignature, recipientSignature)
+		const signature = getSignature(
+			multisigSignature,
+			blankCheckSignature,
+			digestSignature,
+			recipientSignature
+		)
 
 		const initialBalanceSender = await basicToken.balanceOf(multisig)
 		const initialBalanceRecipient = await basicToken.balanceOf(recipient)

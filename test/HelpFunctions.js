@@ -20,7 +20,8 @@ module.exports = {
 }
 
 async function getMultisigSignature(signers, m, multisig) {
-	const pk = '0xDEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB'
+	// const pk = '0xDEEF97D22F51189B1E669A09602F1CAA0C4B4F6102690727289948E2FD0BF9EB'
+	const pk = '0xE73A51303B5330BEB14839019804B50992478F74E7163042ED65365DC606FAEB'
 	const multisigHash = await test.soliditySha3_addresses_m(signers, m);
 
 	const multisigSignature = await web3.eth.accounts.sign(multisigHash, pk);
@@ -28,7 +29,7 @@ async function getMultisigSignature(signers, m, multisig) {
 
 	// const multisigSignature = await web3.eth.sign(multisigHash, multisig);
 	// console.log(	multisigSignature)
-	return getRSV(multisigSignature.slice(2))
+	// return getRSV(multisigSignature.slice(2))
 }
 
 async function getRecipientSignature(recipient, verificationKey) {
