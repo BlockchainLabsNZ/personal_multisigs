@@ -135,14 +135,14 @@ Some variables are declared more than twice which considered as a bad practice.<
 ## Observations
 
 - **Code quality and consistency**<br>
-Therea a nubler of issues with code consistency and correctness, namely:
+There are a number of issues with code consistency and correctness, namely:
 	- Used both double and single quotations marks in variables declaration and comparison operators;
 	- Unused variables;
 	- Strict comparison vs loose comparison operators (== vs ===);
 	- `var` declaration used instead of `let` and `const`;
 	- typos in comments.
 	
-The variety of such issues could form inappropriate and even dissatisfactory impression about the code and, therefore, the product itself. Consider clean it up (at least) with ESLINT.	
+The variety of such issues could form inappropriate and even dissatisfactory impression about the code and, therefore, the product itself. Consider cleaning it up (at least) with ESLINT.	
 
 
 
@@ -150,7 +150,7 @@ The variety of such issues could form inappropriate and even dissatisfactory imp
 
 ## Conclusion
 
-We are sure that these Smart Contracts do not exhibit any known security vulnerabilities. Overall the code of smart contracts is well written and shows care taken by the developers to follow best practices and a strong knowledge of Solidity. Major functions are covered byt tests which should increase confidence in the security of these contracts, and their maintainability in the future. 
+We are sure that these Smart Contracts do not exhibit any known security vulnerabilities. Overall the code of smart contracts are well written and shows care taken by the developers to follow best practices and a strong knowledge of Solidity. Major functions are covered by tests which should increase confidence in the security of these contracts, and their maintainability in the future. 
 
 
 
