@@ -50,7 +50,7 @@ Tests are conducted on the Ropsten test network. The following contract has been
 - [BLABS token](https://ropsten.etherscan.io/address/0x11465b1cd69161b4fe80697e10278228853fc33b) ([repo](https://github.com/BlockchainLabsNZ/blabs-coin))
 
 		In order to get sign transactions, one should send tokens to Multisig 
-		account and approve (ERC20 function) the future spending.
+		account and approve (ERC20 function) the ZippieWallet contract address for the future spending.
 
 
 <br><!-- ********************************************* -->
@@ -63,16 +63,21 @@ Tests are conducted on the Ropsten test network. The following contract has been
 
 ##### redeemBlankCheck( ...*params*... ) public returns (bool)
 
+This test has a requirement of `one` signer, and `zero` required cards. We transferred tokens to "multisig" and `approve`d the ZippieWallet contract to `transferFrom` these tokens.
+
+We used some of the javascript functions in `test/HelpFunctions.js` to sign the transactions using our own account which is where the `v`, `r`, `s` values come from.
+
 To perform the test we called `redeemBlankCheck()` with the following params:
 
+```
 - `addresses`: [
-	- "0x9A7dd0851b69999D62724b1C38A88988D0Fb955D",   
+	- "0x9A7dd0851b69999D62724b1C38A88988D0Fb955D",        (*Multisig*)
 	- "0x11465b1cd69161b4fe80697e10278228853fc33b",        (*Blabs token*)
-	- "0x0000000210198695da702d62b08B0444F2233F9C",        (*receipient*)
-	- "0xC1D7Bd24bf47D12a3a518984B296afC6d0d941aC" ]       (*random account*)
+	- "0x0000000210198695da702d62b08B0444F2233F9C",        (*Recipient*)
+	- "0xC1D7Bd24bf47D12a3a518984B296afC6d0d941aC" ]       (*Verification key (random account)*)
 - `signers`:  
-	- [ "0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6" ]
-- `m`: [ 1, 1, 0, 0 ]
+	- [ "0x7123fc4FCFcC0Fdba49817736D67D6CFdb43f5b6" ]     (*Sender/Signer*)
+- `m`: [ 1, 1, 0, 0 ]					       (*1 possible signer, 1 required signer, 0 possible cards, 0 required cards*)
 - `v`: [ 27, 28, 27 ]
 - `r`: [ 
 	- "0x6d30fc07f763a6228060c963d75260d9b66bdc17791a4656fa6a393dad08a7da", 
@@ -82,12 +87,13 @@ To perform the test we called `redeemBlankCheck()` with the following params:
 	- "0x3f75ca4007b2229838db4a023f04b0e087faebf7356f4738bbe4946abb0327f1", 
 	- "0x1c7c6427964509e375b8da3c386222860583f93edbee32db3de788795c3739f6", 
 	- "0x2b1e7b64a170cd9a1b65cabd24f577f034a73a2f39ffa0ace04492766f23b790" ]
-- `amount`: 1000000000000000000
+- `amount`: 1000000000000000000				       (*1 Token (18 decimals)*)
 - cardNonces: []
+```
 
 ###### Test results
 
-- [x] Transfer succeed if one signature required and given (the sender himself, no cards, no other signatures) [0xc3dc9f](https://ropsten.etherscan.io/tx/0xc3dc9ff27e422a38371ef991959afb14bb05e14f0514e0113c273d3ca4106aa9)
+- [x] Transfer should succeed if one signature is required and given (the sender himself, no cards, no other signatures) [0xc3dc9f](https://ropsten.etherscan.io/tx/0xc3dc9ff27e422a38371ef991959afb14bb05e14f0514e0113c273d3ca4106aa9)
 - [x] Transfer failed if two signature required and one given, no card nonces provided [0x72e5c8](https://ropsten.etherscan.io/tx/0x72e5c8f670ab5c4fe9ef47487e3ceeff7ccb84cacdbb9c8457f52107660c8e9e)
 - [] Transfer succeed if two signature required and one given (the sender himself + card nonces provided) [0x000000]()
 - [] Transfer succeed if two signature required and two given (the sender himself + one other signature) [0x000000]()
