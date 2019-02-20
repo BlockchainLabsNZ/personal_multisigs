@@ -3,12 +3,13 @@
 Prepared by:
 
 - Alex Tikonoff, [alex@blockchainlabs.nz](alex@blockchainlabs.nz)
-- Matt Lough, [matt.lough@blockchainlabs.nz](alex.tikonoff@blockchainlabs.nz)
+- Matt Lough, [matt.lough@blockchainlabs.nz](matt.lough@blockchainlabs.nz)
+- Klaus Hott, [klaus@blockchainlabs.nz](klaus@blockchainlabs.nz)
 
 Report:
 
 - February 19, 2019 – date of delivery
-- February 19, 2019 – last report update
+- February 21, 2019 – last report update
 
 
 
@@ -20,9 +21,6 @@ This audit report was undertaken for the  **[Zippie](https://zippie.org/)**, by 
 Solidity contracts were sourced from the public Github repo [Zippie Personal Multisig](https://github.com/zippiehq/personal_multisigs) and the most recent commit we have audited is this [336c47d11977efaea9b0a83b12ec22ba3844ab38](https://github.com/BlockchainLabsNZ/zippie-multisig-2/commit/336c47d11977efaea9b0a83b12ec22ba3844ab38).
 
 We would encourage all community members and token holders to make their own assessment of the contracts.
-
-
-
 
 
 
@@ -65,6 +63,7 @@ The following contracts were subject for static, dynamic and functional analyses
 
 ## Reports
 
+The outputs of our thorough analysis are detailed further in the below reports.
 - [Static analysis](static-analysis.md)
 - [Dynamic analysis](dynamic-analysis.md) (white box)
 - [Functional Testing](functional-testing.md) (black box)
@@ -135,19 +134,18 @@ Some variables are declared more than twice which considered as a bad practice.<
 ## Observations
 
 - **Parameters hidden within an array**<br>
-  The functions redeemCheck(), redeemBlankCheck(), and setLimit() require arrays of other parameters that a properly documented. The use of different parameters would be more appropriate this case. This use of arrays is likely due to solidity's constraint on number of parameters that can be used. We suggest a refactor in case this constraint changes in future versions of solidity.
+The functions `redeemCheck()`, `redeemBlankCheck()`, and `setLimit()` expect an array of parameters. While there is clear documentation of each of the parameters within the array, it would be preferable to pass each individually as actual parameters. This use of arrays is likely due to solidity's constraint on max number of parameters per function (owing to a limitation of the [EVM stack](https://solidity.readthedocs.io/en/v0.5.0/introduction-to-smart-contracts.html?highlight=stack#storage-memory-and-the-stack)). We suggest a refactor in case this constraint is removed in future versions of solidity/EVM.
 
 - **Only a subset of arrays is used**<br>
-  The functions verifyCardSignatures() and verifyMultisigSignerSignatures() check if a subset of an array of signatures have been created by a subset of an array of valid signers. Working with subsets and ignoring the rest of the array raises a flag, however we understand that building an array within the transaction will incur in missuse of gas, and the arrays contain more information than needed because of solidity's constraint on number of variables described in the last observation. In case this constraint changes in future versions of solidity, we suggest a refactor.
+The functions `verifyCardSignatures()` and `verifyMultisigSignerSignatures()` checks whether a _subset of an array of signatures_ have been created by a _subset of an array of valid signers_. Working with subsets and ignoring the rest of the array raises a flag, however we understand that building an array within the function would consume more gas, and the arrays contain more information than needed because of solidity's constraint on number of variables described in the observation above. In case this constraint changes in future versions of solidity/EVM, we suggest a refactor.
 
 - **Code quality and consistency**<br>
-There are a number of issues with code consistency and correctness, namely:
+There are a number of very minor issues with code consistency and correctness, namely:
 	- Used both double and single quotations marks in variables declaration and comparison operators;
 	- Unused variables;
 	- Strict comparison vs loose comparison operators (== vs ===);
 	- `var` declaration used instead of `let` and `const`;
 	- typos in comments.
-
 
 The variety of such issues could form inappropriate and even dissatisfactory impression about the code and, therefore, the product itself. Consider cleaning it up (at least) with ESLINT.
 
@@ -155,9 +153,7 @@ The variety of such issues could form inappropriate and even dissatisfactory imp
 
 ## Conclusion
 
-We are sure that these Smart Contracts do not exhibit any known security vulnerabilities. Overall the code of smart contracts are well written and shows care taken by the developers to follow best practices and a strong knowledge of Solidity. Major functions are covered by tests which should increase confidence in the security of these contracts, and their maintainability in the future.
-
-
+We are confident that these Smart Contracts do not exhibit any known security vulnerabilities. Overall the code of smart contracts are well written and shows care taken by the developers to follow best practices and a strong knowledge of Solidity. Major functions are covered by tests which should increase confidence in the security of these contracts, and their maintainability in the future.
 
 
 <br><!-- ******************************************************** -->
