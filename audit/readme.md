@@ -105,6 +105,8 @@ The outputs of our thorough analysis are detailed further in the below reports.
   Similar code could be absracted (DRY principle).
   See /contracts/Zippie/ZippieWallet.sol, lines: [49](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/336c47d11977efaea9b0a83b12ec22ba3844ab38/contracts/Zippie/ZippieWallet.sol#L49), [180](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/336c47d11977efaea9b0a83b12ec22ba3844ab38/contracts/Zippie/ZippieWallet.sol#L180)
 
+  - [x] This has been fixed on the `dev` branch in commit [bfe8ec37](https://github.com/zippiehq/personal_multisigs/commit/bfe8ec379987b9caf29f49cb1f0d75dfc3930c61).
+
 - **There are empty test scenarios** – `Best practice`, `Testability`<br>
   See /test/Test_ZippieMultisig_CheckCashingWithCards.js, lines: [145](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/a9f5a46ff3a3ec1415f9c1a6dabdc6dd7f78df49/test/Test_ZippieMultisig_CheckCashingWithCards.js#L145), [149](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/a9f5a46ff3a3ec1415f9c1a6dabdc6dd7f78df49/test/Test_ZippieMultisig_CheckCashingWithCards.js#L149), [153](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/a9f5a46ff3a3ec1415f9c1a6dabdc6dd7f78df49/test/Test_ZippieMultisig_CheckCashingWithCards.js#L153)
 
