@@ -147,7 +147,7 @@ All files                 |    68.87 |    45.45 |    73.08 |    69.28 |         
 - Not all lines of code are covered by tests.
 - Not all possible branches (logic) are covered by tests.
 
-We can not say if all possible scenarios are covered because there are no scenarios described.
+We cannot say if all possible scenarios are covered because there are no scenarios described.
 
 
 
@@ -215,7 +215,7 @@ no special issues found
 [87-89^97-99](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L87-99),
 ...
 
-### Overall
+### Overall comments
 
 - There are no formal test cases to check the tests logic
 - Code mostly lacks documentation / comments
@@ -230,7 +230,7 @@ no special issues found
 - It is strongly recommended to write down formal test cases
 - Describe all scenarios and cover all code completely, up to 100%, including branches (logic/possible scenarios)
 - Break all tests down and aim to have just one or two `assert` per test
-- Clean up the code from unused varables
+- Clean up the code from unused variables
 - Consider using linters to automatically get complaints about code quality, e.g. 
 	- [Standard.js](https://standardjs.com/)
 	- [eslint-plugin-standard](https://github.com/standard/eslint-plugin-standard)
