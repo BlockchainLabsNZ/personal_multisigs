@@ -1,8 +1,7 @@
 # Static analysis
 
-of Zippie Personal Multisig Wallet contract
+Zippie Personal Multisig Wallet contract
 
--
 
 ### Documentation
 
@@ -109,9 +108,6 @@ of Zippie Personal Multisig Wallet contract
 
 
 <br><!-- ******************************** -->	
-## Suggestions
-
-### Common patterns
 	
 ##### verify***Signature()
 - Unneccessary requirements<Br>
@@ -129,6 +125,7 @@ Function contains code for:
 Use mappings instead of loops and calling ZippieUtils' `isAddressInArray()`
 
 <br>
+
 ### ZippieWallet.sol
 
 ##### redeemBlankCheck()
@@ -136,6 +133,7 @@ Use mappings instead of loops and calling ZippieUtils' `isAddressInArray()`
 
 
 <br>
+
 ### Unit tests
 - create testing plan and test cases
 - they are too complex, which is also a sign that functions should be decomposed
