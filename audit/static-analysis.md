@@ -121,8 +121,8 @@ Function contains code for:
 	
 	which is too much for one function. 
 	
-- Checking for duplicates could be done cheaper???<Br>
-Use mappings instead of loops and calling ZippieUtils' `isAddressInArray()`
+- Checking for duplicates could be done in a cheaper way<Br>
+For example, using mappings instead of loops and calling ZippieUtils' `isAddressInArray()`
 
 <br>
 
@@ -130,6 +130,7 @@ Use mappings instead of loops and calling ZippieUtils' `isAddressInArray()`
 
 ##### redeemBlankCheck()
 - The code is similar to `redeemCheck` and could be reused (DRY)
+	- [x] This has been fixed in commit [bfe8ec37](https://github.com/zippiehq/personal_multisigs/commit/bfe8ec379987b9caf29f49cb1f0d75dfc3930c61).
 
 
 <br>
