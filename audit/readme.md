@@ -139,7 +139,7 @@ The outputs of our thorough analysis are detailed further in the below reports.
   The functions `verifyCardSignatures()` and `verifyMultisigSignerSignatures()` checks whether a _subset of an array of signatures_ have been created by a _subset of an array of valid signers_. Working with subsets and ignoring the rest of the array raises a flag, however we understand that building an array within the function would consume more gas, and the arrays contain more information than needed because of solidity's constraint on number of variables described in the observation above. In case this constraint changes in future versions of solidity/EVM, we suggest a refactor.
 
 - **Code quality and consistency**<br>
-  There are a number of very minor issues with code consistency and correctness, namely: - Used both double and single quotations marks in variables declaration and comparison operators; - Unused variables; - Strict comparison vs loose comparison operators (== vs ===); - `var` declaration used instead of `let` and `const`; - typos in comments.
+  There are a number of very minor issues with code consistency and correctness, namely: <br> - Used both double and single quotations marks in variables declaration and comparison operators; <br> - Unused variables; <br> - Strict comparison vs loose comparison operators (== vs ===); <br> - `var` declaration used instead of `let` and `const`; <br> - typos in comments.
 
 The variety of such issues could form inappropriate and even dissatisfactory impression about the code and, therefore, the product itself. Consider cleaning it up (at least) with ESLINT.
 
