@@ -5,7 +5,7 @@ Zippie Personal Multisig Wallet contract
 
 ### Documentation
 
- - [?] Whitepaper, presentations, high level overview
+ - [x] Whitepaper, presentations, high level overview
  - [x] Business logic workflow is described
  - [ ] Communications/Dependencies Diagrams, Control/Data flow diagrams
  - [ ] Specifications and requirements
