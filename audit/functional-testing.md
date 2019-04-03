@@ -21,7 +21,7 @@ The other components of application are out of scope.
 
 ## Deployment
 
-Tests are conducted on the Ropsten test network. The following contract has been flattened, deployed, and verified on Etherscan.
+Tests are conducted on the Ropsten test network. The following contracts have been flattened, deployed, and verified on Etherscan.
 
 ### Contracts
 - [ZippieCardNonce.sol](https://ropsten.etherscan.io/tx/0x97b5546d240333764bb1fcb33823f5e991cef9f9cee8f0f3e97ed3ba16e1298c) 
@@ -94,9 +94,9 @@ To perform the test we called `redeemBlankCheck()` with the following params:
 ###### Test results
 
 - [x] Transfer should succeed if one signature is required and given (the sender himself, no cards, no other signatures) [0xc3dc9f](https://ropsten.etherscan.io/tx/0xc3dc9ff27e422a38371ef991959afb14bb05e14f0514e0113c273d3ca4106aa9)
-- [x] Transfer failed if two signature required and one given, no card nonces provided [0x72e5c8](https://ropsten.etherscan.io/tx/0x72e5c8f670ab5c4fe9ef47487e3ceeff7ccb84cacdbb9c8457f52107660c8e9e)
-- [] Transfer succeed if two signature required and one given (the sender himself + card nonces provided) [0x000000]()
-- [] Transfer succeed if two signature required and two given (the sender himself + one other signature) [0x000000]()
+- [x] Transfer failed if two signatures required and one given, no card nonces provided [0x72e5c8](https://ropsten.etherscan.io/tx/0x72e5c8f670ab5c4fe9ef47487e3ceeff7ccb84cacdbb9c8457f52107660c8e9e)
+- [] Transfer succeed if two signatures required and one given (the sender himself + card nonces provided) [0x000000]()
+- [] Transfer succeed if two signatures required and two given (the sender himself + one other signature) [0x000000]()
 
 
 ### ZippieCardNonce.sol
@@ -112,7 +112,7 @@ To perform the test we called `redeemBlankCheck()` with the following params:
 ##### isNonceUsed(`address signer`, `bytes32 nonce`)
 
 -  Existing (stored) signer
-	-  [ ] should return false if the nonce exist (was stored)
+	-  [ ] should return false if the nonce exists (was stored)
 	-  [ ] should return true if the nonce does not exist (was not stored)
 -  Non-existing signer
 	-  [ ] should return false in all scenarios
