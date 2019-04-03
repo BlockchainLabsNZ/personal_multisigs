@@ -32,7 +32,7 @@ Zippie Personal Multisig Wallet contract
  - [x] Adherence to adopted standards such as ERC20
  - [x] Latest version of pragma
  - [x] Latest syntax (constructors, emit, ... )
- - [ ] Latest(ish) (of stable) version of 
+ - [ ] Latest(ish) version (of stable) 
 	 - [x] Solidity compiler
 	 - [ ] Frameworks – *[Open Zeppelin library v2.0.0](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v2.0.0) is used, which uses old-ish pragma version (0.4.24)*
 	 - [x] Development/testing environment
