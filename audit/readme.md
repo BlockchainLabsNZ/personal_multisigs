@@ -117,11 +117,12 @@ The outputs of our thorough analysis are detailed further in the below reports.
 See Test_ZippieMultisig_CheckCashingWithCards.js: [161^184](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L184), [203^223](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L223), [243^263](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L263), [282^305](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L305)
 
   - [x] This has been fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538)
-  
-  <br>
+
+<br>
 See Test_ZippieMultisig_GasSimulation_BlankCheck.js: [36^79](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L79), [115^168](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L168),
   [56-58^66-68](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L56-68),
   [87-89^97-99](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L87-99),
+<br>
 
 ### Moderate
 
