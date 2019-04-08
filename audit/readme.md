@@ -124,7 +124,7 @@ See Test_ZippieMultisig_CheckCashingWithCards.js: [161^184](https://github.com/B
   [56-58^66-68](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L56-68),
   [87-89^97-99](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L87-99)
 
-   - [x] This has been fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538)
+   - [x] This has been fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538) with [trello reference](Test_ZippieMultisig_GasSimulation_BlankCheck.js)
 <br>
 
 ### Moderate
