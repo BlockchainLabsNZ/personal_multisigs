@@ -100,6 +100,8 @@ The outputs of our thorough analysis are detailed further in the below reports.
 
   which is too much for one function.<br>
   verifyCardSignatures: [26^149](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/336c47d11977efaea9b0a83b12ec22ba3844ab38/contracts/Zippie/ZippieCard.sol#L26-L149), verifyMultisigSignerSignatures: [91^199](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/336c47d11977efaea9b0a83b12ec22ba3844ab38/contracts/Zippie/ZippieMultisig.sol#L91-L199)
+  
+  - [ ] This has not been fixed
 
 - **redeemCheck() and redeemBlankCheck() are almost the same** – `Best practice`, `Enhancement`<br>
   Similar code could be abstracted (DRY principle).
