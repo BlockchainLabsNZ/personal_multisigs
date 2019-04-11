@@ -1,4 +1,4 @@
-# Zippie Multisig
+# Zippie DApp Audit Report
 
 Prepared by:
 
@@ -9,7 +9,7 @@ Prepared by:
 Report:
 
 - February 19, 2019 – date of delivery
-- February 21, 2019 – last report update
+- April 04, 2019 – last report update
 
 <br><!-- ******************************************************** -->
 
@@ -52,7 +52,6 @@ The following contracts were subject for static, dynamic and functional analyses
 ### Out of scope
 
 - Process of signing transactions by external actors
-- Tokens, token contracts, vault, all other code except Multisig itself
 
 <br><!-- ******************************************************** -->
 
@@ -101,7 +100,7 @@ The outputs of our thorough analysis are detailed further in the below reports.
   which is too much for one function.<br>
   verifyCardSignatures: [26^149](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/336c47d11977efaea9b0a83b12ec22ba3844ab38/contracts/Zippie/ZippieCard.sol#L26-L149), verifyMultisigSignerSignatures: [91^199](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/336c47d11977efaea9b0a83b12ec22ba3844ab38/contracts/Zippie/ZippieMultisig.sol#L91-L199)
   
-  - [ ] This has not been fixed
+  - [ ] Not fixed
 
 - **redeemCheck() and redeemBlankCheck() are almost the same** – `Best practice`, `Enhancement`<br>
   Similar code could be abstracted (DRY principle).
@@ -112,19 +111,19 @@ The outputs of our thorough analysis are detailed further in the below reports.
 - **There are empty test scenarios** – `Best practice`, `Testability`<br>
   See /test/Test_ZippieMultisig_CheckCashingWithCards.js, lines: [145](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/a9f5a46ff3a3ec1415f9c1a6dabdc6dd7f78df49/test/Test_ZippieMultisig_CheckCashingWithCards.js#L145), [149](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/a9f5a46ff3a3ec1415f9c1a6dabdc6dd7f78df49/test/Test_ZippieMultisig_CheckCashingWithCards.js#L149), [153](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/a9f5a46ff3a3ec1415f9c1a6dabdc6dd7f78df49/test/Test_ZippieMultisig_CheckCashingWithCards.js#L153)
 
-  - [x] This has been fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538).
+  - [x] Fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538).
 
 - **Variables re-declaration** – `Correctness`<br>
   Some variables are declared more than twice which is considered a bad practice.<br>
 See Test_ZippieMultisig_CheckCashingWithCards.js: [161^184](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L184), [203^223](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L223), [243^263](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L263), [282^305](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_CheckCashingWithCards.js#L305)
 
-  - [x] This has been fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538)<br>
+  - [x] Fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538)<br>
   
   See Test_ZippieMultisig_GasSimulation_BlankCheck.js: [36^79](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L79), [115^168](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L168),
   [56-58^66-68](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L56-68),
   [87-89^97-99](https://github.com/BlockchainLabsNZ/zippie-multisig-2/blob/9b777cadc4ae346e0529a407d818b673aaaa3002/test/Test_ZippieMultisig_GasSimulation_BlankCheck.js#L87-99)
 
-   - [x] This has been fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538) with [trello reference](Test_ZippieMultisig_GasSimulation_BlankCheck.js)
+   - [x] Fixed in commit [2ed98b9](https://github.com/zippiehq/personal_multisigs/commit/2ed98b9217382461c90ea82a30d19f1ca9fc8538) with [trello reference](Test_ZippieMultisig_GasSimulation_BlankCheck.js)
 <br>
 
 ### Moderate
